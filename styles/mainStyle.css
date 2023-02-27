@@ -1,0 +1,114 @@
+
+/* 
+.body
+.navbar 
+.container oder .conteiner-fluid
+.navbar-brand
+.banner - for gradient
+.display-4
+.headerTitle 
+.footer 
+.fixed-bottom
+.h6 .fs-3
+.text-muted 
+.lead
+.container
+.row
+.col (or col-8 how much from 12)
+.my-5 from todolist - for margin
+.container Banner contact form form-control - Contact
+*/
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans&family=Tilt+Neon&display=swap');
+
+:root {
+    --MainColor: #ECF2FF;
+    --C1: #86A3B8 ;
+    --C2: #E8D2A6;
+    --C3: #F48484;
+    --C4: #F55050;
+    --C5: #301E67;
+    --C6: #B6EADA;
+}
+.body {
+    height: 100vh;
+    background: var(--MainColor);
+    font-family: 'Tilt Neon', cursive;;
+}
+
+.headerTitle {
+    text-align: center;
+}
+.Banner {
+    height: 40vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(ellipse at left, var(--C1), var(--C2),var(--C3), transparent), 
+    radial-gradient(ellipse at left, var(--C4), var(--C5), var(--C6),
+    transparent);
+    border-radius: 40px;
+    background-size: 400% 400%;
+    box-shadow: 0 5px 80px var(--C1);
+    -webkit-animation: AnimatedBG 12s ease-in-out infinite;
+}
+.NavUL {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.nav-A:hover::after { /* Ein leeres Pseudo-Element nach dem Anker hinzufügen */
+    content: "";
+    /* color:#F55050 !important; */
+    height: 2px;
+    background-color:lightblue;
+    -webkit-animation: anchorUnderline 1s forwards;
+    /* Positionieren Sie das Pseudo-Element relativ zum Anker */
+    position: absolute;
+    width: 100%;
+    /* Positionieren Sie den Unterstrich am linken Rand des Ankers */
+    left:0;
+    /* Legen Sie den Abstand zwischen dem unteren Ende des Ankers und der Unterstreichung fest */
+    bottom: 1vh;
+}
+ 
+@-webkit-keyframes anchorUnderline {
+    from {width: 0%;}
+    to {width: 100%;}
+}
+
+@-webkit-keyframes AnimatedBG {
+ 0% {background-position: 50% 100%;
+}
+ 
+ 50% {background-position: 100% 150%;
+}
+
+ 100% {background-position: 50% 100%;
+}
+
+}
+
+/* Todo List Style */
+.myUl {
+    max-height: 10vh;
+    overflow: auto;
+}
+
+.noDot {
+    list-style-type: none;
+    list-style: none;
+    font-size: 1.4em;
+}
+
+.contact-form {
+    /* die 3 schritten unten sind wichtig, damit contact-form selber in die mitte von sein eltern positioniert */
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 50%;
+    /* Kinder von Contact-form */
+    text-align: center;
+    box-shadow:  0 0 80px rgba(0, 0, 0, 0.200);
+    border-radius: 10px;
+}
