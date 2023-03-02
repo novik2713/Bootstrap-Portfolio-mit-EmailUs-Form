@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -7,12 +7,10 @@
     <meta name="viewport" content="width=device-.width,initial-scale=1.0">
     <link rel="stylesheet" href="../styles/mainStyle.css">
     <meta charset="UTF-8">
-    <title>Bootstrap-Contact</title>
-</head>
+    <title>🐱‍🏍APOD Project🐱‍🏍</title>
 
 <body>
     <div class="body">
-
         <!-- Navigation -->
         <div class="navbar bg-dark fixed-top">
             <div class="container">
@@ -43,17 +41,20 @@
                 </ul>
             </div>
         </div>
+
         <!-- Body -->
         <div class="container-fluid Banner">
-            <!-- Optional Obigenrand verschlachtlung -->
-            <form class="contact-form mt-3">
-                <h1 class="display-6 headerTitle">Write me, if you are interested or have a question!
-                </h1>
-                <input name="from_name" required type="text" class="form-control mt-4 mb-2" placeholder="Your Name:" />
-                <input  name="from_email" required type="email" class="form-control mt-4 mb-2" placeholder="Your Email:" />
-                <textarea name="message" type="text" class="form-control mt-4 mb-2" placeholder="Your Message:"></textarea>
-                <button class="btn btn-md btn-outline-success" type="submit">Send🐱‍🏍</button>
-            </form>
+            <div class="container">
+                <h1 class="display-4 text-secondary mt-5">NASA Astronomy Picture of the Day</h1>
+                <div id="apod">
+                    <img id="apod-image" src="" alt="IOD">
+                    <div class="apod-info">
+                        <h2 id="apod-title"></h2>
+                        <p id="apod-description"></p>
+                        <p id="apod-data"></p>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Footer -->
@@ -73,21 +74,11 @@
 
     <!-- Imports  -->
     <script src="../backend/script.js"></script>
+    <script src="../backend/fetchApi.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
-    <!-- EmailJS -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
-    </script>
-    <!-- Initialize EmailsJS -->
-    <script type="text/javascript">
-        (function () {
-            emailjs.init("dZU2uBq2mW4pjQGky");
-       })();
-    </script>
 
-    <!-- SweetAler2 Imports -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

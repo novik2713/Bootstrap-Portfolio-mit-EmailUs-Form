@@ -39,11 +39,11 @@
     text-align: center;
 }
 .Banner {
-    height: 40vh;
+    height: 100%;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    /* top: 50%;
+    left: 50%; */
+    /*transform: translate(-50%, -50%); */
     background: radial-gradient(ellipse at left, var(--C1), var(--C2),var(--C3), transparent), 
     radial-gradient(ellipse at left, var(--C4), var(--C5), var(--C6),
     transparent);
@@ -57,22 +57,40 @@
     flex-direction: row;
     gap: 20px;
 }
-.nav-A:hover::after { /* Ein leeres Pseudo-Element nach dem Anker hinzufügen */
-    content: "";
-    /* color:#F55050 !important; */
-    height: 2px;
-    background-color:lightblue;
-    -webkit-animation: anchorUnderline 1s forwards;
-    /* Positionieren Sie das Pseudo-Element relativ zum Anker */
-    position: absolute;
-    width: 100%;
-    /* Positionieren Sie den Unterstrich am linken Rand des Ankers */
-    left:0;
-    /* Legen Sie den Abstand zwischen dem unteren Ende des Ankers und der Unterstreichung fest */
-    bottom: 1vh;
+.nav-A {
+    position: relative;
 }
- 
-@-webkit-keyframes anchorUnderline {
+
+.nav-A:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: blue;
+    -webkit-animation: width 1.3s ease;
+}
+.nav-A:hover:before {
+    width: 100%;
+}
+.underline {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: rgb(173, 23, 15);
+    -webkit-animation: underLine 0.8s ease-out forwards;
+}
+.col-4 img{
+    width: 400px;
+    height: 400px;
+    box-shadow: 0px 0 40px rgb(173, 23, 15);
+}
+
+@-webkit-keyframes underLine {
     from {width: 0%;}
     to {width: 100%;}
 }
@@ -104,11 +122,12 @@
 .contact-form {
     /* die 3 schritten unten sind wichtig, damit contact-form selber in die mitte von sein eltern positioniert */
     position: absolute;
+    top: 30%;
     left: 50%;
     transform: translate(-50%);
-    width: 50%;
     /* Kinder von Contact-form */
     text-align: center;
+    width: 50%;
     box-shadow:  0 0 80px rgba(0, 0, 0, 0.200);
-    border-radius: 10px;
+    border-radius: 1    0px;
 }
